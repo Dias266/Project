@@ -1,0 +1,531 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins';
+}
+.header{
+    height: 100%;
+    background-image: url(https://images.pexels.com/photos/2325446/pexels-photo-2325446.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260);
+    background-size: cover;
+    background-position: center;
+    padding-top:2px ;
+    text-align: center;
+    color: #fff;
+}
+.navbar {
+    padding: 8px;
+  }
+  .navbar-nav li{
+    padding-right: 5px;
+    font-family: 'Poppins';
+  }
+.header h1{
+    padding-top:100px ;
+    padding-bottom: 0;
+    font-size: 55px;
+}
+.header p {
+    margin: 18px 0;
+}
+
+.container {
+    margin-top: 5px
+  }
+  
+  .container .col-lg-4 {
+    display: flex;
+    justify-content: center
+  }
+  
+  .card {
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    perspective: 500px;
+    border: none;
+    background-color: inherit
+  }
+  
+  .card .face {
+    position: absolute;
+    color: black;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.06);
+    transform-style: preserve-3d;
+    transition: 1s;
+    backface-visibility: hidden;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+  }
+  
+  .card .face.front-face,
+  .card .face.back-face {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center
+  }
+  
+  .card .face.front-face .profile {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover
+  }
+  
+  .card .face.front-face .name {
+    letter-spacing: 2px
+  }
+  
+  .card .face.front-face .designation {
+    font-size: 0.8rem;
+    color: black;
+    letter-spacing: 0.8px
+  }
+  
+  .card:hover .face.front-face {
+    transform: rotateY(180deg)
+  }
+  
+  .card .face.back-face {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.06);
+    transform: rotateY(180deg);
+    padding: 20px 30px;
+    text-align: center;
+    user-select: none
+  }
+  
+  .card .face.back-face .fa-quote-left {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    font-size: 1.2rem
+  }
+  
+  .card .face.back-face .fa-quote-right {
+    position: absolute;
+    bottom: 35px;
+    right: 25px;
+    font-size: 1.2rem
+  }
+  
+  .card:hover .face.back-face {
+    transform: rotateY(360deg)
+  }
+  
+  @media(max-width: 991.5px) {
+    .col-lg-4 {
+        margin-top: 40px;
+        margin-bottom: 20px
+    }
+  }
+
+
+.wrapper {
+    max-width: 800px;
+    margin: 50px auto
+}
+
+.wrapper form {
+    padding: 30px 50px
+}
+
+.wrapper form .form-group {
+    padding-bottom: .5rem
+}
+
+.wrapper form .option {
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+    display: block
+}
+
+.wrapper form .option input {
+    display: none
+}
+
+.wrapper form .checkmark {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    height: 17px;
+    width: 17px;
+    background-color: #fff;
+    border: 1px solid #aaa;
+    border-radius: 50%
+}
+
+.wrapper form .option input:checked~.checkmark:after {
+    display: block
+}
+
+.wrapper form .option .checkmark:after {
+    content: "";
+    width: 7px;
+    height: 7px;
+    display: block;
+    border-radius: 50%;
+    background-color: #00BF85;
+    position: absolute;
+    top: 48%;
+    left: 52%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out 0s
+}
+
+.wrapper form .option:hover input[type="radio"]~.checkmark {
+    background-color: #f4f4f4
+}
+
+.wrapper form .option input[type="radio"]:checked~.checkmark {
+    background: #fff;
+    color: #fff;
+    transition: 300ms ease-in-out 0s
+}
+
+.wrapper form .option input[type="radio"]:checked~.checkmark:after {
+    transform: translate(-50%, -50%) scale(1);
+    color: #fff
+}
+
+.wrapper form a {
+    color: #00BF85
+}
+
+.wrapper form .form-control {
+    outline: none;
+    border: none
+}
+
+.wrapper form .form-control:focus {
+    box-shadow: none
+}
+
+.wrapper form input[type="text"]:focus::placeholder {
+    color: transparent
+}
+
+input[type="date"] {
+    cursor: pointer
+}
+
+.wrapper form .label::after {
+    position: absolute;
+    top: 5px;
+    left: 0px;
+    font-size: 0.9rem;
+    margin: 0rem 0.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08rem;
+    font-weight: 600;
+    color: #999;
+    transition: all .2s ease-in-out;
+    transform: scale(0)
+}
+
+.wrapper form .label#from::after {
+    content: 'From'
+}
+
+.wrapper form .label#to::after {
+    content: 'To'
+}
+
+.wrapper form .label#depart::after {
+    content: 'Depart Date'
+}
+
+.wrapper form .label#return::after {
+    content: 'Return Date'
+}
+
+.wrapper form .label#psngr::after {
+    content: 'Traveller(s)'
+}
+
+.wrapper form input[type="text"]:focus~.label::after {
+    top: -15px;
+    left: 0px;
+    transform: scale(1)
+}
+
+.wrapper form input[type="date"]:focus~.label::after {
+    top: -15px;
+    left: 0px;
+    transform: scale(1)
+}
+
+.margin {
+    margin: 2rem 0rem
+}
+
+@media(max-width: 575.5px) {
+    .wrapper {
+        margin: 10px
+    }
+
+    .wrapper form {
+        padding: 20px
+    }
+
+    .margin {
+        margin: .2rem 0rem
+    }
+}
+
+.discovery{
+    background: white;
+}
+.discovery .text{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: auto;
+}
+.discovery .text h6{
+    color: #00BF7F;
+    font-weight: 800;
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+.discovery .text h2{
+    color: black;
+    font-weight: 700;
+    font-size: 2.7rem;
+}
+.discovery .text p{
+    color: black;
+    font-weight: 400;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+.discovery .text a{
+    background: #00BF85;
+    font-weight: 600;
+    padding: 0.6rem 1.4rem;
+    border-radius: 30px;
+    text-decoration: none;
+    color: #111;
+}
+.padding{
+    padding-bottom: 32px;
+  }
+.welcome{
+    width: 75%;
+    margin: 0 auto;
+    padding-top: 32px;
+}
+/*gallery*/
+.wrapper-gallery{
+    margin: 0 20vw;
+}
+#index-gallery{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 10px;
+    grid-template-areas: 
+    "gallery-p gallery-p gallery-p gallery-p"
+    "gallery-h2 gallery-h2 gallery-h2 gallery-h2"
+    "img1 img2 img3 img4"
+    "img5 img6 img3 img7";
+}
+#index-gallery .gallery-img{
+    width: 100%;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+/*images*/
+#index-gallery p{
+    grid-area: gallery-p;
+}
+#index-gallery h2{
+    grid-area: gallery-h2;
+}
+#index-gallery .img1{
+    grid-area: img1;
+    background-image: url("./img/images/img1.jpg");
+}
+#index-gallery .img2{
+    grid-area: img2;
+    background-image: url("./img/images/img2.jpg");
+}
+#index-gallery .img3{
+    grid-area: img3;
+    background-image: url("./img/images/img3.jpg");
+    height: 610px;
+}
+#index-gallery .img4{
+    grid-area: img4;
+    background-image: url("./img/images/img4.jpg");
+}
+#index-gallery .img5{
+    grid-area: img5;
+    background-image: url("./img/images/img5.jpg");
+}
+#index-gallery .img6{
+    grid-area: img6;
+    background-image: url("./img/images/img6.jpg");
+}
+#index-gallery .img7{
+    grid-area: img7;
+    background-image: url("./img/images/img7.jpg");
+}
+/*gallery titles*/
+.gallery-img div{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.gallery-img a{
+    font-family: "Popins", sans-serif;
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.gallery-img div:hover{
+    opacity: 0.8;
+    transition: all ease-in-out 100ms; /*slow start slow end*/
+}
+/*when image is open*/
+.img-window{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.img-window img{
+    max-height: 80vh;
+    max-width: 80vw;
+}
+/*buttons of gallery*/
+.img-btn-next{
+    display: block;
+    padding: 6px 10px; /*topbuttom and rightleft*/
+    border-radius: 4px;
+    background-color: #00BF7F;
+    position: fixed;
+    top: 48vh;
+    z-index: 500;
+    font-family: "Popins", sans-serif;
+    color: black;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+.img-btn-next:hover{
+ opacity: 0.8;
+ background-color: #111;
+}
+.img-btn-prev{
+    display: block;
+    padding: 6px 10px; /*topbuttom and rightleft*/
+    border-radius: 4px;
+    background-color: #00BF7F;
+    position: fixed;
+    top: 48vh;
+    z-index: 500;
+    font-family: "Popins", sans-serif;
+    color: black;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+.img-btn-prev:hover{
+    opacity: 0.8;
+    background-color: #111;
+   }
+/*thrid page*/
+
+
+p {
+    margin: 0 0 10px;
+}
+
+.tabs {
+    max-width: 600px;
+    margin: 50px auto;
+}
+
+.tabs__nav {
+    display: flex;
+}
+
+.tabs__nav-btn {
+    padding: 15px 30px;
+    font-size: 20px;
+    background-color: #f5f5f5;
+    border: 0;
+    border-right: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.tabs__nav-btn:last-child {
+    border-right: none;
+}
+
+.tabs__nav-btn:hover {
+    background-color: #ddd;
+}
+
+.tabs__nav-btn.active {
+    background-image: url("https://images.pexels.com/photos/5193270/pexels-photo-5193270.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    border-right-color: #5e3ddf;
+    color: #fff;
+}
+
+.tabs__content {
+    padding: 30px;
+    background-color: #fff;
+}
+
+.tabs__item {
+    display: none;
+}
+
+.tabs__item.active {
+    display: block;
+}
+/*back to top*/
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: red; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+  }
+  
+  #myBtn:hover {
+    background-color: #555; /* Add a dark-grey background on hover */
+  }
